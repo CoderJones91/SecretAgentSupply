@@ -1,3 +1,4 @@
+/* Universal Selector */
 html{
     text-align: center;
     font-size: 18px;
@@ -8,6 +9,8 @@ html{
     max-width: 960px;
     margin: 0 auto;
 }
+
+/*  Banner */ 
 .logo .container{
     display: flex;
     align-items: center;
@@ -16,7 +19,6 @@ html{
     height: 1.32rem;
     background-color: black;
     color: white;
-    
     align-items: center;
     padding-top: 0.66rem;
     padding-bottom: 0.66rem;
@@ -36,6 +38,7 @@ html{
     text-transform: uppercase;
     letter-spacing: 3px;
 }
+
 /* Main Section */
 .main{
     background-image: url(../images/moto.jpeg);
@@ -54,62 +57,174 @@ html{
     padding: 2rem 3rem;
     position: relative;
     top: 9rem;
-    text-align: left;
-    
-    
+    text-align: left;  
 }
 .headline h1{
    font-size: 2rem;
    line-height: 2.2rem;
    margin: .25rem 0;
-   
+ 
 }
 .headline h4{
     font-size: 1rem;
     margin-bottom: .25rem;
 
 }
+
 /* Nav Section */
-.nav{
-    height: ;
+nav{
     background-color: firebrick;
     color: #FFFFFF;
-    
     width: 100%;
     padding: .75rem 0;
 }
-.nav nav{
+nav{
     display: flex;
 }
-.nav span{
+nav ul{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    
     font-size: 1.2rem;
 }
-.nav a, a:link{
+nav a, a:link{
     color: #FFF;
     text-decoration: none;
 }
-
-
-/* Product Section */
-.product{
-    height: 600px;
-    background-color: white;
+.mobile-nav{
+    display: none;
 }
 
+/* Product & Info Section */
+.products, .info{
+   
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem; 
+}
+.product{
+    width: 30%;
+}
+.product-image{
+    border: 4px solid black;
+    padding: 2rem 0; 
+    height: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-image img{
+    max-width: 8rem;
+}
+.description{
+    display: block;
+    background-color: #000;
+    color: #FFF;
+    padding: 0.5rem 0;
+    
+}
+.info .title{
+    display: block;
+    background-color: black;
+    color: white;
+    padding:1rem 0 1rem 2rem;
+}
+.location, .hours{
+    width: 35%;
+    text-align: left;
+}
+.info{
+    margin-bottom: 4rem;
+}
 
 /* Footer Section */
 footer{
-    height: 5rem;
-    background-color: black;
-    display: flex;
-    align-items: center;
+    padding: 5rem 0;
+    background-color: black;   
 }
 footer .copy{
     color: white;
     text-align: left;
     margin-left: 10px;
-    font-size: .75rem;
+    font-size: 1rem;
+}
+
+/* Tablet Media Query */
+@media only screen and (max-width: 1024px)
+{
+    .container{
+        max-width: 1024px;
+    }
+    .headline h1{
+        font-size: 1.8rem;
+    }
+    .product{
+        width: 47%;
+    }
+    .product.glasses{
+        display: none;
+    }
+    nav ul.container{
+        display: none;
+    }
+    nav ul.mobile-nav{
+        display: block;
+    }   
+}
+
+/* Mobile Media Query */
+@media only screen and (max-width: 470px)
+{   
+    .logo .container{
+        display: initial;
+        
+    }
+    .logo img{
+        margin: 0 auto;
+    }
     
+    .logo h1{
+        display: none;
+}  
+     .product{
+         width: 90%;
+     }
+     .info{
+        
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .info .location, .hours{
+        width: 90%;
+        margin: 0.5rem auto;
+        
+    }
+    .product.watch{
+        display: none;
+    }
+    .main{
+       height: 15rem;
+    }
+    .headline{
+        position: relative;
+        top: 10rem;
+        padding: 1rem 2rem;
+        width: auto;
+    }
+    .headline h4{
+        font-size: .77rem;
+    }
+    .headline h1{
+        font-size: 1rem;
+    }
+    nav{
+        padding: 1rem 0;
+    }
+    .container .products, .ifo{
+        justify-content: center;
+    }
+    .container .copy{
+        text-align: center;
+    }
 }
